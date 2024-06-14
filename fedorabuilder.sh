@@ -65,7 +65,7 @@ execute_command() {
             echo "WARNING: Nix installation on Fedora is experimental."
             read -rp "Do you want to proceed? (y/N): " confirm
             if [[ $confirm =~ ^[Yy]$ ]]; then
-                curl -L https://nixos.org/nix/install | sh
+                sh <(curl -L https://nixos.org/nix/install) --daemon
             else
                 echo "Nix installation cancelled."
             fi
